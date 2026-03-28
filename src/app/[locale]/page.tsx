@@ -14,11 +14,14 @@ import { getUi } from "@/lib/ui/strings";
 import type { ArticleTheme } from "@/lib/content/taxonomy";
 import { LocaleSwitchLinks } from "@/components/locale-switch-links";
 
-const homeThemeChipClass = [
-  "inline-block rounded-full border border-stone-200 bg-(--surface) px-3 py-1.5 text-sm",
-  "text-stone-700 transition",
-  "hover:border-amber-600/40 hover:text-amber-950",
-  "dark:border-stone-600 dark:text-stone-300 dark:hover:border-amber-500/35 dark:hover:text-amber-100",
+/** Full-width rows on small screens: easier taps and no awkward chip wrapping. */
+const homeThemeMobileIndexLinkClass = [
+  "block min-h-11 w-full px-4 py-3 text-left text-sm leading-snug font-medium text-stone-800",
+  "transition-colors",
+  "hover:bg-stone-100 active:bg-stone-200",
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-600",
+  "dark:text-stone-100 dark:hover:bg-stone-800/80 dark:active:bg-stone-800",
+  "dark:focus-visible:outline-amber-500",
 ].join(" ");
 
 const homeThemeHeadingClass = [
@@ -89,12 +92,24 @@ export default async function LocaleHomePage({
             <p className="mb-2 text-xs font-semibold tracking-wide text-stone-500 uppercase dark:text-stone-400">
               {ui.homeThemeIndex}
             </p>
-            <ul className="flex flex-wrap gap-2">
-              {grouped.map(({ theme }) => (
-                <li key={theme}>
+            <ul
+              className={[
+                "overflow-hidden rounded-xl border border-stone-200 bg-(--surface)",
+                "dark:border-stone-600",
+              ].join(" ")}
+            >
+              {grouped.map(({ theme }, i) => (
+                <li
+                  key={theme}
+                  className={
+                    i > 0
+                      ? "border-t border-stone-200 dark:border-stone-600"
+                      : undefined
+                  }
+                >
                   <a
                     href={`#${themeSectionId(theme)}`}
-                    className={homeThemeChipClass}
+                    className={homeThemeMobileIndexLinkClass}
                   >
                     {getThemeLabel(theme, locale)}
                   </a>
