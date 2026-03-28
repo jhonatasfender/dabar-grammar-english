@@ -115,6 +115,11 @@ const SUBTHEME_LABELS: Record<string, Record<Locale, string>> = {
     pt: "Contabilidade e quantidade",
     es: "Contabilidad y cantidad",
   },
+  "numerals-and-numbers": {
+    en: "Numerals and number forms",
+    pt: "Numerais e formas numéricas",
+    es: "Numerales y formas numéricas",
+  },
   "possession-and-genitive": {
     en: "Possession and the genitive",
     pt: "Posse e genitivo saxão",

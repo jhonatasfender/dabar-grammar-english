@@ -2,7 +2,7 @@
 articleId: articles-a-an-the
 locale: en
 title: Articles — _a_, _an_, and _the_ (indefinite vs definite coding)
-description: Phonological _a_ vs _an_, first-mention vs unique identification, and advanced patterns with coordinate structures and proper nouns—aligned with academic noun-phrase control.
+description: "Phonological _a_/_an_, discourse chains (first mention → retrieval), cataphora and bridging inference, generics, predicatives, _a_ vs _one_, and academic prose patterns—aligned with advanced NP control."
 theme: nominal-groups
 subtheme: determiners-and-articles
 orderInTheme: 0
@@ -10,36 +10,102 @@ tags:
   - articles
   - determiners
   - definiteness
-summary: _A/an_ marks non-identifiable or first-introduced referents; _the_ marks identifiability in context—errors often come from L1 zero-article defaults, not from memorising “rules lists”.
+summary: >-
+  Articles encode **whether the reader can identify** the referent in the text model: _a/an_ introduce or typify; _the_ presupposes shared knowledge, local uniqueness, or discourse linkage. Advanced errors are rarely random “exceptions”; they are mostly **information flow** and **L1 zero-article** interference.
 ---
 
 ## _A_ vs _an_: next **sound**, not next letter
 
-- _a university_ / _an hour_
-- _an NLP pipeline_ (if read as _en-el-pee_ initial vowel sound)
+The rule is **phonological** (the sound at the start of the very next stressed syllable), not spelling.
 
-## Indefinite article: instance or type
+- Consonant sound → _a_: _a university_, _a European policy_, _a one-off experiment_, _a URL_ (if read “you-are-el”).
+- Vowel sound → _an_: _an hour_, _an honest mistake_, _an X-ray_, _an NLP pipeline_ (if “en-el-pee” starts with a vowel).
 
-- **Token introduction:** _We trained **a** transformer model._
-- **Type / role:** _She works as **a** reviewer for two journals._
+Abbreviations and acronyms follow the **pronunciation** you use, not the alphabet.
 
-## Definite article: shared identifiability
+## What “definite” and “indefinite” actually do
 
-Use _the_ when the reader can **locate** the referent: anaphoric (_the model **we** just introduced_), uniqueness in frame (_the CEO_), or situational obviousness (_Close **the** window._).
+In descriptive grammar, _the_ marks **identifiability** for the target reader: the NP is recoverable from prior mention, from **modification** that makes it unique in the frame, from **shared knowledge** (_the Prime Minister_ in the country under discussion), or from **“obvious” uniqueness** in the world model (_the Sun_).
 
-## Coordinations
+_A/an_ typically mark **non-identifiability** or **first instantiation** of a singular countable token: the reader has not yet pinned down a particular instance.
 
-In _**a** knife and fork_, some speakers accept single article for stereotyped pairs; with two distinct items, two articles may be clearer: _a knife and **a** spoon_.
+> The useful revision question is not “specific vs vague”, but: **does the reader already know _which_ instance?** If yes, _the_ tends to win; if not, _a/an_ (or zero with plural/mass—see the sister article).
 
-## Proper nouns (advanced sketch)
+## Indefinite: instance, type, or role
 
-Geographical and institutional names vary idiosyncratically (_the United States_, _Lake Geneva_). When in doubt, check a **dictionary or institutional site**, not a single heuristic.
+- **Token introduction (first mention):** _We trained **a** transformer-based classifier on the corpus._ — no particular shared classifier yet; a discourse “slot” opens.
+- **Type / function / role:** _She works as **a** reviewer for two journals._ — not “one reviewer among all reviewers in the world”, but **an instance of the role**.
+- **Predicative classification:** _He is **a** linguist._ — class membership; _He is **the** linguist who refuted the claim._ — individuation by restriction.
 
-## Five-minute practice
+## Discourse chains: anaphora, cataphora, and bridging
 
-Highlight every article in one paragraph of your draft; for each NP, label **first mention**, **anaphoric**, **generic**, or **unique**.
+- **Classic anaphora:** _We deployed **a** parser. **The** parser failed on long sentences._ — _the_ picks up the same token.
+- **Cataphora:** _**The** claim advanced below rests on two lemmas._ — identifiable content comes **after** (_below_, relative clause, appositive).
+- **Bridging inference:** _She bought **a** car. **The** dealer offered a warranty._ — “dealer” was not mentioned, but readers **infer** the link via “car”. Requires strong coherence; in dry prose it can feel telegraphic.
+
+These chains intersect with [Pronouns and reference](/en/pronouns-and-reference): articles and pronouns compete in the same **information economy**.
+
+## Definite article: restriction and **local** uniqueness
+
+_The_ appears when a modifier **delimits** the set to a referent (or a salient set):
+
+- _**The** students **who** passed the quiz_ vs students in general (often zero article in the generic plural—see below).
+- Superlatives and ordering: _**the** best result_, _**the** first author_.
+- Situationally obvious: _Close **the** door._ — unique in the immediate context.
+
+## Generics: _a/an_, _the_ + singular, and where this article stops
+
+Three common patterns (register-sensitive):
+
+- **_A/an_ + singular:** _**A** tiger can weigh 300 kg._ — **typical exemplar** of the class.
+- **_The_ + singular:** _**The** tiger is endangered._ — **species**-level reading (often more formal than “Tigers are…”).
+- **Bare plural or bare mass:** default **generic** patterns—covered in [Articles: _the_ or no article](/en/articles-definite-and-zero) and [Countable and uncountable nouns](/en/nouns-countable-and-uncountable).
+
+If the head is mass or generic plural, do not force _a/an_ where English wants zero.
+
+## _A_ vs _one_: cardinality and contrast
+
+- _We ran **one** experiment, not two._ — **numeric** focus.
+- _We ran **an** experiment using adversarial examples._ — **one** among possible instances, without stressing the count.
+
+With _only_, contrast favours _one_: _only **one** model converged_.
+
+## Coordination and a single determiner
+
+- Stereotyped pair (one set): _**a** knife and fork_ — “single pair” reading is common.
+- Two independent items: _**a** knife and **a** spoon_ — avoids ambiguity (not a fixed kit).
+- Mixed roles: _**a** teacher and mentor_ may be one person with two roles; _**a** teacher and **a** mentor_ are two referents.
+
+## Academic prose: three-step topic progression
+
+A robust Methods/Results pattern:
+
+1. _**A** novel scoring function is proposed._
+2. _**The** proposed scoring function combines …_
+3. _**The** function was evaluated on …_
+
+After **specification** (_proposed_, _above_, _in Section 3_), the reader can tell **which** function: _the_ is licensed. For wider cohesion patterns, see [Grammar moves for academic and professional English](/en/academic-writing-grammar).
+
+## Degree inside the NP: _such a_ and _quite a_
+
+Patterns like _**such a** nuisance_, _**quite a** breakthrough_ package degree in the NP; collocational frames differ from _so + adjective_. See [Intensifiers _so_ and _such_ — degree clauses and NP packaging](/en/intensifiers-so-and-such).
+
+## Proper nouns (what is truly idiosyncratic)
+
+Hydronyms, mountain ranges, compound state names, media outlets, and institutional names follow **lexicalised** conventions (_the Atlantic_, _the Alps_, _the BBC_, _Lake Geneva_, _Harvard University_). There is no reliable short algorithm: **corpus, dictionary, or official site** beats L1 intuition.
+
+## Ten-minute practice
+
+1. In one paragraph of your draft, number each singular countable NP and label **first mention**, **anaphoric retrieval**, **cataphoric**, **generic**, or **unique in frame**.
+2. For each _the_, ask: **what cue** (text, world, modifier) makes the referent identifiable?
+3. For each zero article on plural/mass NPs, check you are not forcing a **particularised** reading that would need _the_.
 
 ## See also
 
 - [Articles: _the_ or no article](/en/articles-definite-and-zero)
+- [Countable and uncountable nouns](/en/nouns-countable-and-uncountable)
 - [Prepositions and articles (hub)](/en/prepositions-and-articles)
+- [Pronouns and reference](/en/pronouns-and-reference)
+- [Grammar moves for academic and professional English](/en/academic-writing-grammar)
+- [Intensifiers _so_ and _such_ — degree clauses and NP packaging](/en/intensifiers-so-and-such)
+- [L1 interference patterns for Portuguese and Spanish speakers](/en/l1-interference-pt-es)

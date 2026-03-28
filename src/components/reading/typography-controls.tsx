@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { cn } from "@/lib/cn";
 
 const STORAGE_KEY = "reading-font-scale";
 const scales = [100, 112, 125] as const;
@@ -52,11 +53,12 @@ export function TypographyControls({ label }: { label: string }) {
           key={s}
           type="button"
           onClick={() => apply(s)}
-          className={`rounded-md border px-2 py-1 transition ${
+          className={cn(
+            "rounded-md border px-2 py-1 transition",
             scale === s
               ? "border-amber-700 bg-amber-50 text-amber-950 dark:border-amber-500 dark:bg-amber-950/40 dark:text-amber-100"
-              : "border-stone-300 bg-white hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-900 dark:hover:bg-stone-800"
-          }`}
+              : "border-stone-300 bg-white hover:bg-stone-50 dark:border-stone-600 dark:bg-stone-900 dark:hover:bg-stone-800",
+          )}
         >
           {s}%
         </button>

@@ -2,6 +2,7 @@ import type { Locale } from "@/lib/content/constants";
 
 type Ui = {
   siteTitle: string;
+  navPrimaryAria: string;
   navArticles: string;
   navSearch: string;
   navAbout: string;
@@ -19,6 +20,7 @@ type Ui = {
   relatedArticles: string;
   summaryLabel: string;
   homeIntro: string;
+  homeThemeIndex: string;
   searchTitle: string;
   searchMetaDescription: string;
   searchPlaceholder: string;
@@ -34,6 +36,7 @@ type Ui = {
 const STRINGS: Record<Locale, Ui> = {
   pt: {
     siteTitle: "Dabar Grammar English",
+    navPrimaryAria: "Navegação principal",
     navArticles: "Artigos",
     navSearch: "Buscar",
     navAbout: "Sobre",
@@ -52,6 +55,7 @@ const STRINGS: Record<Locale, Ui> = {
     summaryLabel: "Em resumo",
     homeIntro:
       "Bem-vindo ao Dabar Grammar English: gramática inglesa avançada em artigos editoriais, organizados por temas e subtemas. Você pode usar a interface em português e, quando quiser, abrir o mesmo tópico em inglês ou espanhol — cada idioma traz o artigo completo, redigido para essa língua.",
+    homeThemeIndex: "Índice por tema",
     searchTitle: "Buscar artigos",
     searchMetaDescription:
       "Busca no índice de artigos de gramática inglesa avançada do Dabar Grammar English (português, inglês e espanhol).",
@@ -66,6 +70,7 @@ const STRINGS: Record<Locale, Ui> = {
   },
   en: {
     siteTitle: "Dabar Grammar English",
+    navPrimaryAria: "Main navigation",
     navArticles: "Articles",
     navSearch: "Search",
     navAbout: "About",
@@ -84,6 +89,7 @@ const STRINGS: Record<Locale, Ui> = {
     summaryLabel: "In short",
     homeIntro:
       "Welcome to Dabar Grammar English: advanced English grammar in editorial articles, organized by theme and subtopic. Use the site in English and open the same topic in Portuguese or Spanish when you like — each language offers a full article written for that audience.",
+    homeThemeIndex: "Browse by theme",
     searchTitle: "Search articles",
     searchMetaDescription:
       "Search the Dabar Grammar English article index — advanced English grammar in English, Portuguese, and Spanish.",
@@ -98,6 +104,7 @@ const STRINGS: Record<Locale, Ui> = {
   },
   es: {
     siteTitle: "Dabar Grammar English",
+    navPrimaryAria: "Navegación principal",
     navArticles: "Artículos",
     navSearch: "Buscar",
     navAbout: "Acerca de",
@@ -116,6 +123,7 @@ const STRINGS: Record<Locale, Ui> = {
     summaryLabel: "En resumen",
     homeIntro:
       "Bienvenido a Dabar Grammar English: gramática inglesa avanzada en artículos editoriales, organizados por tema y subtema. Puede usar la interfaz en español y abrir el mismo tema en inglés o portugués cuando quiera — cada idioma ofrece el artículo completo, redactado para esa lengua.",
+    homeThemeIndex: "Índice por tema",
     searchTitle: "Buscar artículos",
     searchMetaDescription:
       "Busca en el índice de artículos de gramática inglesa avanzada de Dabar Grammar English (inglés, portugués y español).",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { Providers } from "@/components/providers";
 import { WebsiteJsonLd } from "@/components/seo/json-ld";
+import { cn } from "@/lib/cn";
 import { getSiteUrl } from "@/lib/site/url";
 import "./globals.css";
 
@@ -58,7 +59,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} min-h-full bg-[var(--background)] font-sans text-[var(--foreground)] antialiased`}
+        className={cn(
+          geistSans.variable,
+          geistMono.variable,
+          sourceSerif.variable,
+          "min-h-full bg-background font-sans text-foreground antialiased",
+        )}
       >
         <Providers>
           <WebsiteJsonLd />

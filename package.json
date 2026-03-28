@@ -23,6 +23,7 @@
     "doc:cross-refs": "node scripts/generate-article-cross-refs-table.mjs"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "contentlayer2": "^0.5.8",
     "lucide-react": "^1.7.0",
     "minisearch": "^7.2.0",
@@ -32,7 +33,8 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

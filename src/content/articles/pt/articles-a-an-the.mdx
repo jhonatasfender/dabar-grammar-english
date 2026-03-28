@@ -2,7 +2,7 @@
 articleId: articles-a-an-the
 locale: pt
 title: Artigos — _a_, _an_ e _the_ (indefinido vs codificação definida)
-description: "_A_ vs _an_ pelo **som** seguinte, primeira menção vs identificação única e padrões avançados com coordenação e nomes próprios — alinhado ao controle de SN acadêmico."
+description: "Som para _a_/_an_, cadeias discursivas (primeira menção → retomada), catafora e inferência associativa, genéricos, predicativos, _a_ vs _one_ e padrões de prosa acadêmica — alinhado a SN e revisão avançada."
 theme: nominal-groups
 subtheme: determiners-and-articles
 orderInTheme: 0
@@ -10,36 +10,102 @@ tags:
   - articles
   - determiners
   - definiteness
-summary: _A/an_ marca referente não identificável ou recém-introduzido; _the_ marca identificabilidade no contexto — erros vêm sobretudo do padrão de zero-artigo da L1, não de listas de regras.
+summary: >-
+  Artigos codificam **se o leitor pode identificar** o referente no modelo mental do texto: _a/an_ introduzem ou tipificam; _the_ pressupõe partilha de conhecimento, unicidade local ou encadeamento discursivo. Erros avançados raramente são “exceções”; são sobretudo **fluxo informacional** e **interferência do zero artigo** da L1.
 ---
 
 ## _A_ vs _an_: próximo **som**, não letra
 
-- _a university_ / _an hour_
-- _an NLP pipeline_ (se lido com som vocálico inicial)
+O critério é **fonológico** (som da sílaba tónica inicial do elemento imediato a seguir), não a grafia.
 
-## Artigo indefinido: instância ou tipo
+- Consoante audível → _a_: _a university_, _a European policy_, _a one-off experiment_, _a URL_ (se ler “iu-ar-él”).
+- Vogal audível → _an_: _an hour_, _an honest mistake_, _an X-ray_, _an NLP pipeline_ (se “en-el-pi” começa em vogal).
 
-- **Introdução de token:** _We trained **a** transformer model._
-- **Tipo / papel:** _She works as **a** reviewer for two journals._
+Abreviaturas e siglas seguem o **som** da leitura escolhida, não o alfabeto.
 
-## Artigo definido: identificabilidade compartilhada
+## O que “definido” e “indefinido” fazem no texto
 
-Use _the_ quando o leitor pode **localizar** o referente: anafórico (_the model **we** just introduced_), unicidade no quadro (_the CEO_), óbvio situacional (_Close **the** window._).
+Em gramática descritiva, _the_ marca **identificabilidade** para o leitor-alvo: o SN é recuperável por menção prévia, por **modificação** que o torna único no quadro, por **conhecimento partilhado** (_the Prime Minister_ no país em discussão) ou por **unicidade “óbvia”** no modelo do mundo (_the Sun_).
 
-## Coordenações
+_A/an_ marcam tipicamente **não-identificabilidade** ou **primeira instanciação** de um token contável singular: o leitor ainda não tem um referente particular fixado.
 
-Em _**a** knife and fork_, alguns falantes aceitam um artigo para pares estereotipados; com dois itens distintos, dois artigos podem clarear: _a knife and **a** spoon_.
+> A distinção útil na revisão não é “sério vs vago”, e sim: **o leitor já sabe _qual_ instância?** Se sim, tende a _the_; se não, tende a _a/an_ (ou zero, com plural/massa — ver artigo irmão).
 
-## Nomes próprios (esboço avançado)
+## Indefinido: instância, tipo ou papel
 
-Nomes geográficos e institucionais variam idiossincraticamente (_the United States_, _Lake Geneva_). Em dúvida, consulte **dicionário ou site oficial**, não uma única heurística.
+- **Introdução de token (primeira menção):** _We trained **a** transformer-based classifier on the corpus._ — ainda não há um classificador particular compartilhado; abre-se um “slot” discursivo.
+- **Tipo / função / papel:** _She works as **a** reviewer for two journals._ — não é “uma revisora entre todas as do mundo”, é **instância do papel**.
+- **Predicativo de classificação:** _He is **a** linguist._ — classe; _He is **the** linguist who refuted the claim._ — individuação por restrição.
 
-## Prática rápida (5 minutos)
+## Cadeias discursivas: anáfora, catafora e “ponte”
 
-Destaque cada artigo num parágrafo seu; para cada SN, rotule **primeira menção**, **anafórico**, **genérico** ou **único**.
+- **Anáfora clássica:** _We deployed **a** parser. **The** parser failed on long sentences._ — _the_ retoma o mesmo token.
+- **Catafora:** _**The** claim advanced below rests on two lemmas._ — o conteúdo identificável vem **depois** (_below_, oração relativa, aposto).
+- **Inferência associativa (bridging):** _She bought **a** car. **The** dealer offered a warranty._ — “dealer” não foi mencionado antes, mas o leitor **infere** o elos com “car”. Exige coerência forte; em texto seco, pode soar telegráfico.
+
+Estes encadeamentos cruzam com [Pronomes e referência](/pt/pronouns-and-reference): artigos e pronomes competem pela mesma **economia informacional**.
+
+## Artigo definido: restrição e unicidade **local**
+
+_The_ aparece quando um modificador **delimita** o conjunto a um referente (ou conjunto já saliente):
+
+- _**The** students **who** passed the quiz_ vs estudantes em geral (muitas vezes zero artigo no plural genérico — ver abaixo).
+- Superlativos e ordenação: _**the** best result_, _**the** first author_.
+- Óbvio situacional: _Close **the** door._ — único no contexto imediato.
+
+## Genérico: _a/an_, _the_ + singular e o limite deste artigo
+
+Três padrões frequentes (com nuances de registo):
+
+- **_A/an_ + singular:** _**A** tiger can weigh 300 kg._ — **exemplar típico** da classe.
+- **_The_ + singular:** _**The** tiger is endangered._ — leitura de **espécie** ou classe taxonómica (mais formal que “Tigers are…”).
+- **Plural sem artigo ou massa sem artigo:** padrão de **genérico** em geral — coberto em [Artigo definido ou zero](/pt/articles-definite-and-zero) e [Substantivos contáveis e incontáveis](/pt/nouns-countable-and-uncountable).
+
+Se o núcleo for incontável ou plural genérico, **não** force _a/an_ onde o inglês pede zero.
+
+## _A_ vs _one_: cardinalidade e contraste
+
+- _We ran **one** experiment, not two._ — ênfase **numérica**.
+- _We ran **an** experiment using adversarial examples._ — **uma** entre possíveis, sem foco no número.
+
+Com _only_, o contraste reforça _one_: _only **one** model converged_.
+
+## Coordenações e um só determinante
+
+- Par estereotipado (um só conjunto): _**a** knife and fork_ — interpretação de “par único” é comum.
+- Dois itens independentes: _**a** knife and **a** spoon_ — evita ambiguidade (não são um kit fixo).
+- Mistura de funções: _**a** teacher and mentor_ pode ser uma pessoa com dois papéis; _**a** teacher and **a** mentor_ são dois referentes.
+
+## Prosa acadêmica: progressão tópica em 3 passos
+
+Padrão robusto em métodos e resultados:
+
+1. _**A** novel scoring function is proposed._
+2. _**The** proposed scoring function combines …_
+3. _**The** function was evaluated on …_
+
+Após **especificação** (_proposed_, _above_, _in Section 3_), o leitor identifica **qual** função: entra _the_. Para padrões de coesão mais amplos, ver [Recursos gramaticais para inglês acadêmico](/pt/academic-writing-grammar).
+
+## Intensificação com SN: _such a_ e _quite a_
+
+Expressões como _**such a** nuisance_, _**quite a** breakthrough_ empacotam grau no SN; o quadro colocacional é distinto de _so + adjetivo_. Ver [Intensificadores _so_ e _such_](/pt/intensifiers-so-and-such).
+
+## Nomes próprios (o que é idiossincrático de verdade)
+
+Hidronímia, cadeias montanhosas, estados compostos, órgãos mediáticos e nomes de instituições seguem convenções **lexicalizadas** (_the Atlantic_, _the Alps_, _the BBC_, _Lake Geneva_, _Harvard University_). Não há um algoritmo curto fiável: **corpus, dicionário ou site oficial** vencem a intuição da L1.
+
+## Prática rápida (10 minutos)
+
+1. Num parágrafo seu, numere cada SN contável singular e marque: **primeira menção**, **retomada anafórica**, **catafórico**, **genérico** ou **único no quadro**.
+2. Para cada _the_, pergunte: **que pista** (texto, mundo, modificador) torna o referente identificável?
+3. Para cada zero artigo em plural/massa, confirme se não está a forçar uma leitura **particularizada** que exigiria _the_.
 
 ## Ver também
 
 - [Artigo definido ou zero](/pt/articles-definite-and-zero)
+- [Substantivos contáveis e incontáveis](/pt/nouns-countable-and-uncountable)
 - [Preposições e artigos (hub)](/pt/prepositions-and-articles)
+- [Pronomes e referência](/pt/pronouns-and-reference)
+- [Recursos gramaticais para inglês acadêmico](/pt/academic-writing-grammar)
+- [Intensificadores _so_ e _such_](/pt/intensifiers-so-and-such)
+- [Interferência estrutural PT/ES](/pt/l1-interference-pt-es)
