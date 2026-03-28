@@ -15,8 +15,9 @@ import { GITHUB_REPO_URL } from "@/lib/site/github";
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const ui = getUi(locale);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-[var(--surface)]/90 backdrop-blur-md dark:border-stone-700/80">
+    <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-(--surface)/90 backdrop-blur-md dark:border-stone-700/80">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href={`/${locale}`}
@@ -76,7 +77,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             {ui.navGithub}
           </a>
           <span
-            className="hidden text-stone-400 sm:inline"
+            className="hidden text-stone-600 sm:inline dark:text-stone-400"
             title={ui.navLocaleHint}
           >
             {LOCALE_LABELS[locale]}
