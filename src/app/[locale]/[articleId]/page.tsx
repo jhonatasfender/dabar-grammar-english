@@ -5,6 +5,7 @@ import { ArticleJsonLd } from "@/components/seo/json-ld";
 import { getArticle } from "@/lib/content/articles";
 import { isLocale, type Locale } from "@/lib/content/constants";
 import { articleAlternates } from "@/lib/seo/alternates";
+import { stripInlineMarkdown } from "@/lib/markdown/strip-inline-markdown";
 import { openGraphLocales } from "@/lib/seo/open-graph-locale";
 import { allArticles } from "contentlayer/generated";
 
@@ -27,14 +28,18 @@ export async function generateMetadata({
   const locale = raw as Locale;
   const { locale: ogLoc, alternateLocale } = openGraphLocales(locale);
   const path = `/${locale}/${articleId}`;
+  const titlePlain = stripInlineMarkdown(article.title);
+  const descriptionPlain = article.description
+    ? stripInlineMarkdown(article.description)
+    : undefined;
   return {
-    title: article.title,
-    description: article.description,
+    title: titlePlain,
+    description: descriptionPlain,
     alternates: articleAlternates(articleId, locale),
     openGraph: {
       type: "article",
-      title: article.title,
-      description: article.description,
+      title: titlePlain,
+      description: descriptionPlain,
       url: path,
       locale: ogLoc,
       alternateLocale,

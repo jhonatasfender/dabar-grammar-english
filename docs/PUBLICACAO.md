@@ -30,7 +30,7 @@ Campos validados pelo Contentlayer (ver também [`src/lib/content/schema.ts`](..
 | `subtheme`     | sim         | Slug `kebab-case`; rótulos en/pt/es devem existir em `taxonomy.ts` para slugs novos                                                    |
 | `orderInTheme` | não         | Número (default `0`): ordem entre artigos do mesmo `theme` + `subtheme` + `locale`                                                     |
 | `description`  | não         | Resumo (SEO + busca no site)                                                                                                           |
-| `summary`      | não         | Resposta curta (1–3 frases) exibida no topo do artigo e usada como `abstract` em JSON-LD — útil para snippets e superfícies com IA       |
+| `summary`      | não         | Resposta curta (1–3 frases) exibida no topo do artigo e usada como `abstract` em JSON-LD — útil para snippets e superfícies com IA     |
 | `tags`         | não         | Lista de strings                                                                                                                       |
 | `references`   | não         | Lista de strings (bibliografia curta)                                                                                                  |
 

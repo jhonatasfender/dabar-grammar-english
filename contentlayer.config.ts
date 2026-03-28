@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer2/source-files";
+import remarkGfm from "remark-gfm";
 import { ARTICLE_THEME_OPTIONS } from "./src/lib/content/taxonomy";
 
 export const Article = defineDocumentType(() => ({
@@ -106,7 +107,7 @@ export default makeSource({
   contentDirPath: "src/content",
   documentTypes: [Article, SitePage],
   mdx: {
-    remarkPlugins: [],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [],
   },
 });

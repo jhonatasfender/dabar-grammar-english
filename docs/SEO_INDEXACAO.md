@@ -10,29 +10,29 @@ Veja também [`.env.example`](../.env.example).
 
 ## Arquivos gerados
 
-| Recurso    | Origem no código        |
-| ---------- | ----------------------- |
-| `robots.txt` | [`src/app/robots.ts`](../src/app/robots.ts) |
+| Recurso       | Origem no código                              |
+| ------------- | --------------------------------------------- |
+| `robots.txt`  | [`src/app/robots.ts`](../src/app/robots.ts)   |
 | `sitemap.xml` | [`src/app/sitemap.ts`](../src/app/sitemap.ts) |
 
 ## Política de bots (matriz)
 
-| User-agent        | Função típica                         | Padrão neste projeto                                      |
-| ----------------- | ------------------------------------- | --------------------------------------------------------- |
-| `*`               | Crawlers genéricos                    | `Allow: /`                                                |
-| `OAI-SearchBot`   | Busca no ecossistema ChatGPT          | `Allow: /` (recomendado para aparecer em respostas com links) |
-| `Claude-SearchBot` | Melhoria de busca Anthropic         | `Allow: /`                                                |
-| `PerplexityBot`   | Índice Perplexity (não treino foundation, segundo documentação Perplexity) | `Allow: /` |
-| `GPTBot`          | Treino de modelos OpenAI              | `Disallow: /` **salvo** se treino for permitido (ver abaixo) |
-| `ClaudeBot`       | Treino Anthropic                      | `Disallow: /` **salvo** se treino for permitido           |
-| `Google-Extended` | Usos de IA Google separados do core Search | `Disallow: /` **salvo** se treino/uso estendido for permitido |
+| User-agent         | Função típica                                                              | Padrão neste projeto                                          |
+| ------------------ | -------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `*`                | Crawlers genéricos                                                         | `Allow: /`                                                    |
+| `OAI-SearchBot`    | Busca no ecossistema ChatGPT                                               | `Allow: /` (recomendado para aparecer em respostas com links) |
+| `Claude-SearchBot` | Melhoria de busca Anthropic                                                | `Allow: /`                                                    |
+| `PerplexityBot`    | Índice Perplexity (não treino foundation, segundo documentação Perplexity) | `Allow: /`                                                    |
+| `GPTBot`           | Treino de modelos OpenAI                                                   | `Disallow: /` **salvo** se treino for permitido (ver abaixo)  |
+| `ClaudeBot`        | Treino Anthropic                                                           | `Disallow: /` **salvo** se treino for permitido               |
+| `Google-Extended`  | Usos de IA Google separados do core Search                                 | `Disallow: /` **salvo** se treino/uso estendido for permitido |
 
 **Importante:** bloquear `Google-Extended` **não** remove o site do Google Search; o controle de indexação clássico continua sendo `Googlebot` + metadados (`noindex`, etc.), conforme documentação Google.
 
 ### Variáveis de ambiente
 
-| Variável | Efeito |
-| -------- | ------ |
+| Variável                                                                       | Efeito                                                                                                                         |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 | `ROBOTS_ALLOW_AI_TRAINING=true` ou `NEXT_PUBLIC_ROBOTS_ALLOW_AI_TRAINING=true` | Remove `Disallow: /` para `GPTBot`, `ClaudeBot` e `Google-Extended` (permite treino/uso conforme política de cada fornecedor). |
 
 Alterações em `robots.txt` podem levar **até ~24h** para serem refletidas em alguns sistemas de IA.

@@ -8,6 +8,7 @@ import {
 import { isLocale, LOCALE_LABELS, type Locale } from "@/lib/content/constants";
 import { buildLocalePageMetadata } from "@/lib/seo/build-metadata";
 import { getSubthemeLabel, getThemeLabel } from "@/lib/content/taxonomy";
+import { InlineMarkdown } from "@/components/reading/inline-markdown";
 import { getUi } from "@/lib/ui/strings";
 
 export function generateStaticParams() {
@@ -73,12 +74,15 @@ export default async function LocaleHomePage({
                         className="group block rounded-xl border border-stone-200 bg-[var(--surface)] p-5 transition hover:border-amber-600/50 dark:border-stone-700 dark:hover:border-amber-500/40"
                       >
                         <span className="font-medium text-stone-900 group-hover:text-amber-950 dark:text-stone-50 dark:group-hover:text-amber-100">
-                          {a.title}
+                          <InlineMarkdown text={a.title} variant="inline" />
                         </span>
                         {a.description ? (
-                          <span className="mt-2 block text-sm text-stone-600 dark:text-stone-400">
-                            {a.description}
-                          </span>
+                          <div className="mt-2 space-y-1 text-sm text-stone-600 dark:text-stone-400">
+                            <InlineMarkdown
+                              text={a.description}
+                              variant="block"
+                            />
+                          </div>
                         ) : null}
                       </Link>
                     </li>

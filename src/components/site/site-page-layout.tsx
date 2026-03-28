@@ -1,4 +1,5 @@
 import type { SitePage } from "contentlayer/generated";
+import { InlineMarkdown } from "@/components/reading/inline-markdown";
 import { MdxBody } from "@/components/reading/mdx-body";
 import { TypographyControls } from "@/components/reading/typography-controls";
 import { SitePageLanguageSwitch } from "@/components/site/site-page-language-switch";
@@ -27,12 +28,12 @@ export function SitePageLayout({
             : ui.sitePageKickerContribute}
         </p>
         <h1 className="font-serif text-3xl leading-tight font-semibold tracking-tight text-stone-900 sm:text-4xl dark:text-stone-50">
-          {page.title}
+          <InlineMarkdown text={page.title} variant="inline" />
         </h1>
         {page.description ? (
-          <p className="text-lg leading-relaxed text-stone-600 dark:text-stone-400">
-            {page.description}
-          </p>
+          <div className="space-y-2 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+            <InlineMarkdown text={page.description} variant="block" />
+          </div>
         ) : null}
         <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <p className="text-sm text-stone-500 dark:text-stone-500">

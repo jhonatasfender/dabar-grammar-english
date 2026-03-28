@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MiniSearch from "minisearch";
 import { useMemo, useState } from "react";
+import { InlineMarkdown } from "@/components/reading/inline-markdown";
 import type { SearchDoc } from "@/lib/search/search-docs";
 
 export function SearchPanel({
@@ -78,12 +79,12 @@ export function SearchPanel({
                 className="block rounded-lg border border-stone-200 bg-[var(--surface)] p-4 transition hover:border-amber-600/60 dark:border-stone-700 dark:hover:border-amber-500/50"
               >
                 <span className="font-medium text-stone-900 dark:text-stone-50">
-                  {r.title}
+                  <InlineMarkdown text={r.title} variant="inline" />
                 </span>
                 {r.description ? (
-                  <span className="mt-1 block text-sm text-stone-600 dark:text-stone-400">
-                    {r.description}
-                  </span>
+                  <div className="mt-1 space-y-1 text-sm text-stone-600 dark:text-stone-400">
+                    <InlineMarkdown text={r.description} variant="block" />
+                  </div>
                 ) : null}
                 <span className="mt-2 block text-xs tracking-wide text-stone-400 uppercase">
                   {r.topicLine}

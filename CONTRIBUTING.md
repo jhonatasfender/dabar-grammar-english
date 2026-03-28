@@ -23,10 +23,10 @@ Use `npm run build` before opening a PR to ensure Contentlayer and Next.js compi
 
 ## Content layout
 
-| Kind       | Path pattern                                                 | Frontmatter type                                                                                                                       |
-| ---------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Kind       | Path pattern                                                 | Frontmatter type                                                                                                                                  |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Articles   | `src/content/articles/{en,pt,es}/*.mdx`                      | `Article` — requires `articleId`, `locale`, `title`, `theme`, `subtheme`, optional `orderInTheme`, `description`, `summary`, `tags`, `references` |
-| Site pages | `src/content/pages/{en,pt,es}/about.mdx` or `contribute.mdx` | `SitePage` — requires `locale`, `slug` (`about` \| `contribute`), `title`, optional `description`                                      |
+| Site pages | `src/content/pages/{en,pt,es}/about.mdx` or `contribute.mdx` | `SitePage` — requires `locale`, `slug` (`about` \| `contribute`), `title`, optional `description`                                                 |
 
 URLs:
 

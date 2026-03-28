@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/content/constants";
+import { stripInlineMarkdown } from "@/lib/markdown/strip-inline-markdown";
 import { localeAlternatesForPath, sitePageAlternates } from "./alternates";
 import type { SitePageSlug } from "@/lib/content/site-pages";
 import { openGraphLocales } from "./open-graph-locale";
@@ -36,16 +37,20 @@ export function buildSitePageMetadata(opts: {
   title: string;
   description?: string;
 }): Metadata {
+  const title = stripInlineMarkdown(opts.title);
+  const description = opts.description
+    ? stripInlineMarkdown(opts.description)
+    : undefined;
   const { locale, alternateLocale } = openGraphLocales(opts.locale);
   const path = `/${opts.locale}/${opts.slug}`;
   const alternates = sitePageAlternates(opts.slug, opts.locale);
   return {
-    title: opts.title,
-    description: opts.description,
+    title,
+    description,
     ...(alternates ? { alternates } : {}),
     openGraph: {
-      title: opts.title,
-      description: opts.description,
+      title,
+      description,
       url: path,
       locale,
       alternateLocale,

@@ -110,7 +110,7 @@ const SUBTHEME_LABELS: Record<string, Record<Locale, string>> = {
     pt: "Determinantes e artigos",
     es: "Determinantes y artículos",
   },
-  "countability": {
+  countability: {
     en: "Countability and quantity",
     pt: "Contabilidade e quantidade",
     es: "Contabilidad y cantidad",
@@ -119,6 +119,11 @@ const SUBTHEME_LABELS: Record<string, Record<Locale, string>> = {
     en: "Possession and the genitive",
     pt: "Posse e genitivo saxão",
     es: "Posesión y genitivo sajón",
+  },
+  "pronouns-and-reference": {
+    en: "Pronouns and reference",
+    pt: "Pronomes e referência",
+    es: "Pronombres y referencia",
   },
   "place-and-time-prepositions": {
     en: "Place and time prepositions",
@@ -144,6 +149,96 @@ const SUBTHEME_LABELS: Record<string, Record<Locale, string>> = {
     en: "Non-finite clauses",
     pt: "Orações não finitas",
     es: "Oraciones no finitas",
+  },
+  "english-varieties": {
+    en: "British and American English",
+    pt: "Inglês britânico e americano",
+    es: "Inglés británico y americano",
+  },
+  "concession-contrast": {
+    en: "Concession and contrast",
+    pt: "Concessão e contraste",
+    es: "Concesión y contraste",
+  },
+  "habituality-used-to": {
+    en: "Habituality and used to",
+    pt: "Habitualidade e used to",
+    es: "Habitualidad y used to",
+  },
+  "future-forms": {
+    en: "Future forms",
+    pt: "Formas de futuro",
+    es: "Formas de futuro",
+  },
+  "epistemic-modality": {
+    en: "Epistemic modality",
+    pt: "Modalidade epistêmica",
+    es: "Modalidad epistémica",
+  },
+  "deontic-modality": {
+    en: "Deontic modality",
+    pt: "Modalidade deôntica",
+    es: "Modalidad deóntica",
+  },
+  "passive-voice": {
+    en: "Passive voice",
+    pt: "Voz passiva",
+    es: "Voz pasiva",
+  },
+  "ability-past": {
+    en: "Past ability",
+    pt: "Habilidade no passado",
+    es: "Capacidad en el pasado",
+  },
+  "perfect-aspect": {
+    en: "Perfect aspect",
+    pt: "Aspecto perfeito",
+    es: "Aspecto perfecto",
+  },
+  "phrasal-verbs": {
+    en: "Phrasal verbs",
+    pt: "Phrasal verbs",
+    es: "Phrasal verbs",
+  },
+  "verb-preposition-collocations": {
+    en: "Verb + preposition",
+    pt: "Verbo + preposição",
+    es: "Verbo + preposición",
+  },
+  "question-tags": {
+    en: "Question tags",
+    pt: "Question tags",
+    es: "Question tags",
+  },
+  "object-pronouns": {
+    en: "Object pronouns",
+    pt: "Pronomes de objeto",
+    es: "Pronombres de objeto",
+  },
+  "reflexive-pronouns": {
+    en: "Reflexive pronouns",
+    pt: "Pronomes reflexivos",
+    es: "Pronombres reflexivos",
+  },
+  "relative-clauses": {
+    en: "Relative clauses",
+    pt: "Orações relativas",
+    es: "Oraciones relativas",
+  },
+  "reported-speech": {
+    en: "Reported speech",
+    pt: "Discurso indireto",
+    es: "Estilo indirecto",
+  },
+  "lexical-aspect": {
+    en: "Lexical aspect",
+    pt: "Aspecto lexical",
+    es: "Aspecto léxico",
+  },
+  "wishes-hypotheticals": {
+    en: "Wishes and hypotheticals",
+    pt: "Desejos e hipóteses",
+    es: "Deseos e hipótesis",
   },
 };
 

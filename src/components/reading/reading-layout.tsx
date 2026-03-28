@@ -1,4 +1,5 @@
 import type { Article } from "contentlayer/generated";
+import { InlineMarkdown } from "@/components/reading/inline-markdown";
 import { LanguageSwitch } from "@/components/reading/language-switch";
 import { MdxBody } from "@/components/reading/mdx-body";
 import { TypographyControls } from "@/components/reading/typography-controls";
@@ -26,12 +27,12 @@ export function ReadingLayout({
           {formatThemeLine(article.theme, article.subtheme, locale)}
         </p>
         <h1 className="font-serif text-3xl leading-tight font-semibold tracking-tight text-stone-900 sm:text-4xl dark:text-stone-50">
-          {article.title}
+          <InlineMarkdown text={article.title} variant="inline" />
         </h1>
         {article.description ? (
-          <p className="text-lg leading-relaxed text-stone-600 dark:text-stone-400">
-            {article.description}
-          </p>
+          <div className="space-y-2 text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+            <InlineMarkdown text={article.description} variant="block" />
+          </div>
         ) : null}
         {article.summary ? (
           <aside
@@ -41,9 +42,9 @@ export function ReadingLayout({
             <p className="font-sans text-xs font-semibold tracking-wide text-amber-900 uppercase dark:text-amber-200/90">
               {ui.summaryLabel}
             </p>
-            <p className="mt-2 font-serif text-stone-900 dark:text-stone-100">
-              {article.summary}
-            </p>
+            <div className="mt-2 space-y-2 font-serif text-stone-900 dark:text-stone-100">
+              <InlineMarkdown text={article.summary} variant="block" />
+            </div>
           </aside>
         ) : null}
         <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">

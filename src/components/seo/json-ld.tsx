@@ -1,6 +1,7 @@
 import type { Article } from "contentlayer/generated";
 import type { Locale } from "@/lib/content/constants";
 import { DEFAULT_LOCALE } from "@/lib/content/constants";
+import { stripInlineMarkdown } from "@/lib/markdown/strip-inline-markdown";
 import { absoluteUrl, getSiteUrl } from "@/lib/site/url";
 
 const SITE_NAME = "Dabar Grammar English";
@@ -40,8 +41,15 @@ export function ArticleJsonLd({
 }) {
   const url = absoluteUrl(`/${locale}/${article.articleId}`);
   const base = getSiteUrl();
-  const inLanguage =
-    locale === "en" ? "en" : locale === "es" ? "es" : "pt-BR";
+  const inLanguage = locale === "en" ? "en" : locale === "es" ? "es" : "pt-BR";
+
+  const titlePlain = stripInlineMarkdown(article.title);
+  const descriptionPlain = article.description
+    ? stripInlineMarkdown(article.description)
+    : undefined;
+  const summaryPlain = article.summary
+    ? stripInlineMarkdown(article.summary)
+    : undefined;
 
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -56,7 +64,7 @@ export function ArticleJsonLd({
       {
         "@type": "ListItem",
         position: 2,
-        name: article.title,
+        name: titlePlain,
         item: url,
       },
     ],
@@ -65,7 +73,7 @@ export function ArticleJsonLd({
   const articleEntity: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: article.title,
+    headline: titlePlain,
     inLanguage,
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -79,11 +87,11 @@ export function ArticleJsonLd({
     url,
   };
 
-  if (article.description) {
-    articleEntity.description = article.description;
+  if (descriptionPlain) {
+    articleEntity.description = descriptionPlain;
   }
-  if (article.summary) {
-    articleEntity.abstract = article.summary;
+  if (summaryPlain) {
+    articleEntity.abstract = summaryPlain;
   }
 
   return (
@@ -106,12 +114,11 @@ export function WebPageJsonLd({
   path: string;
 }) {
   const url = absoluteUrl(path);
-  const inLanguage =
-    locale === "en" ? "en" : locale === "es" ? "es" : "pt-BR";
+  const inLanguage = locale === "en" ? "en" : locale === "es" ? "es" : "pt-BR";
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: title,
+    name: stripInlineMarkdown(title),
     url,
     inLanguage,
     isPartOf: {
@@ -120,6 +127,6 @@ export function WebPageJsonLd({
       url: getSiteUrl(),
     },
   };
-  if (description) data.description = description;
+  if (description) data.description = stripInlineMarkdown(description);
   return <JsonLdScript data={data} />;
 }
