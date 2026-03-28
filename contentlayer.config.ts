@@ -49,6 +49,11 @@ export const Article = defineDocumentType(() => ({
       of: { type: "string" },
       default: [],
     },
+    relatedArticles: {
+      type: "list",
+      of: { type: "string" },
+      default: [],
+    },
   },
   computedFields: {
     url: {

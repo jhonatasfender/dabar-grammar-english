@@ -21,20 +21,28 @@ Frontmatter do tipo **SitePage**: `locale`, `slug` (`about` \| `contribute`), `t
 
 Campos validados pelo Contentlayer (ver também [`src/lib/content/schema.ts`](../src/lib/content/schema.ts)):
 
-| Campo          | Obrigatório | Descrição                                                                                                                              |
-| -------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `articleId`    | sim         | ID estável **igual** em todos os idiomas do mesmo artigo                                                                               |
-| `locale`       | sim         | `en` \| `pt` \| `es` (deve bater com a pasta)                                                                                          |
-| `title`        | sim         | Título exibido                                                                                                                         |
-| `theme`        | sim         | Um dos valores canónicos em `contentlayer.config.ts` / [`src/lib/content/taxonomy.ts`](../src/lib/content/taxonomy.ts) (ordem da home) |
-| `subtheme`     | sim         | Slug `kebab-case`; rótulos en/pt/es devem existir em `taxonomy.ts` para slugs novos                                                    |
-| `orderInTheme` | não         | Número (default `0`): ordem entre artigos do mesmo `theme` + `subtheme` + `locale`                                                     |
-| `description`  | não         | Resumo (SEO + busca no site)                                                                                                           |
-| `summary`      | não         | Resposta curta (1–3 frases) exibida no topo do artigo e usada como `abstract` em JSON-LD — útil para snippets e superfícies com IA     |
-| `tags`         | não         | Lista de strings                                                                                                                       |
-| `references`   | não         | Lista de strings (bibliografia curta)                                                                                                  |
+| Campo             | Obrigatório | Descrição                                                                                                                                                                       |
+| ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `articleId`       | sim         | ID estável **igual** em todos os idiomas do mesmo artigo                                                                                                                        |
+| `locale`          | sim         | `en` \| `pt` \| `es` (deve bater com a pasta)                                                                                                                                   |
+| `title`           | sim         | Título exibido                                                                                                                                                                  |
+| `theme`           | sim         | Um dos valores canónicos em `contentlayer.config.ts` / [`src/lib/content/taxonomy.ts`](../src/lib/content/taxonomy.ts) (ordem da home)                                          |
+| `subtheme`        | sim         | Slug `kebab-case`; rótulos en/pt/es devem existir em `taxonomy.ts` para slugs novos                                                                                             |
+| `orderInTheme`    | não         | Número (default `0`): ordem entre artigos do mesmo `theme` + `subtheme` + `locale`                                                                                              |
+| `description`     | não         | Resumo (SEO + busca no site)                                                                                                                                                    |
+| `summary`         | não         | Resposta curta (1–3 frases) exibida no topo do artigo e usada como `abstract` em JSON-LD — útil para snippets e superfícies com IA                                              |
+| `tags`            | não         | Lista de strings                                                                                                                                                                |
+| `references`      | não         | Lista de strings (bibliografia curta)                                                                                                                                           |
+| `relatedArticles` | não         | Lista de `articleId` (mesmo locale): exibida como bloco **Leia também** / **See also** / **Ver también** após o corpo do artigo, com links para títulos existentes nesse idioma |
 
 **Nota editorial:** não há campo de “nível” no frontmatter. A progressão do mais acessível ao mais avançado fica **no corpo do MDX** (secções) e, se houver vários textos no mesmo subtema, em `orderInTheme`.
+
+## Referências cruzadas entre artigos
+
+1. **Mapa editorial** — [`docs/REFERENCIAS_ENTRE_ARTIGOS.md`](./REFERENCIAS_ENTRE_ARTIGOS.md) lista links internos (`/{locale}/{articleId}`) com **ficheiro de origem**, **linha**, **trecho**, **ficheiro de destino** e `articleId`. Cada idioma é uma linha quando existirem `en`/`pt`/`es`. Ao adicionar ou alterar um link no MDX, atualize a entrada correspondente (ou volte a gerar a tabela).
+2. **Regenerar a tabela** (após muitas edições): `npm run doc:cross-refs`.
+3. **Links no corpo** — pode usar Markdown `[texto](/pt/slug)` **ou** o componente MDX `<ArticleLink articleId="slug">rótulo</ArticleLink>` (o locale vem da página; o rótulo continua por idioma).
+4. **`relatedArticles`** — use o frontmatter para um bloco fixo “Leia também” com `articleId` do **mesmo** locale; entradas sem artigo nesse idioma são omitidas.
 
 ## Indexação e resposta rápida (Search / IA)
 

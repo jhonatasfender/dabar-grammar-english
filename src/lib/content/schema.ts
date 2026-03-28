@@ -11,4 +11,5 @@ export type ArticleFrontmatterShape = {
   orderInTheme?: number;
   tags?: string[];
   references?: string[];
+  relatedArticles?: string[];
 };

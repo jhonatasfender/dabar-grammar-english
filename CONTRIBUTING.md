@@ -23,10 +23,10 @@ Use `npm run build` before opening a PR to ensure Contentlayer and Next.js compi
 
 ## Content layout
 
-| Kind       | Path pattern                                                 | Frontmatter type                                                                                                                                  |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Articles   | `src/content/articles/{en,pt,es}/*.mdx`                      | `Article` — requires `articleId`, `locale`, `title`, `theme`, `subtheme`, optional `orderInTheme`, `description`, `summary`, `tags`, `references` |
-| Site pages | `src/content/pages/{en,pt,es}/about.mdx` or `contribute.mdx` | `SitePage` — requires `locale`, `slug` (`about` \| `contribute`), `title`, optional `description`                                                 |
+| Kind       | Path pattern                                                 | Frontmatter type                                                                                                                                                     |
+| ---------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Articles   | `src/content/articles/{en,pt,es}/*.mdx`                      | `Article` — requires `articleId`, `locale`, `title`, `theme`, `subtheme`; optional `orderInTheme`, `description`, `summary`, `tags`, `references`, `relatedArticles` |
+| Site pages | `src/content/pages/{en,pt,es}/about.mdx` or `contribute.mdx` | `SitePage` — requires `locale`, `slug` (`about` \| `contribute`), `title`, optional `description`                                                                    |
 
 URLs:
 
@@ -34,7 +34,7 @@ URLs:
 - About: `/{locale}/about`
 - Contribute: `/{locale}/contribute`
 
-More detail (in Portuguese): [docs/PUBLICACAO.md](docs/PUBLICACAO.md).
+More detail (in Portuguese): [docs/PUBLICACAO.md](docs/PUBLICACAO.md). Cross-links between articles are tracked in [docs/REFERENCIAS_ENTRE_ARTIGOS.md](docs/REFERENCIAS_ENTRE_ARTIGOS.md) (regenerate with `npm run doc:cross-refs` after bulk edits).
 
 ## Pull request checklist
 

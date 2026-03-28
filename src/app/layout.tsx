@@ -20,8 +20,13 @@ const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
 });
 
+const GOOGLE_SITE_VERIFICATION = "unahNzmBf8H9v8ij7TE7I63r6AHngHn_vNNWNgeNiiU";
+
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
+  ...(GOOGLE_SITE_VERIFICATION.trim() && {
+    verification: { google: GOOGLE_SITE_VERIFICATION.trim() },
+  }),
   title: {
     default: "Dabar Grammar English",
     template: "%s · Dabar Grammar English",

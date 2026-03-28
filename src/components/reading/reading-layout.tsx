@@ -1,10 +1,15 @@
 import type { Article } from "contentlayer/generated";
+import Link from "next/link";
 import { InlineMarkdown } from "@/components/reading/inline-markdown";
 import { LanguageSwitch } from "@/components/reading/language-switch";
 import { MdxBody } from "@/components/reading/mdx-body";
 import { TypographyControls } from "@/components/reading/typography-controls";
 import type { Locale } from "@/lib/content/constants";
-import { getArticleSiblings } from "@/lib/content/articles";
+import {
+  getAllArticleIds,
+  getArticle,
+  getArticleSiblings,
+} from "@/lib/content/articles";
 import { formatThemeLine } from "@/lib/content/taxonomy";
 import { getUi } from "@/lib/ui/strings";
 
@@ -19,6 +24,13 @@ export function ReadingLayout({
   const siblings = getArticleSiblings(article) as Partial<
     Record<Locale, Article>
   >;
+  const validArticleIds = getAllArticleIds();
+  const relatedResolved = article.relatedArticles
+    .map((id) => ({ id, doc: getArticle(locale, id) }))
+    .filter(
+      (x): x is { id: string; doc: Article } =>
+        x.doc !== undefined && x.id !== article.articleId,
+    );
 
   return (
     <article className="reading-root mx-auto max-w-5xl px-4 py-10 sm:px-6">
@@ -62,8 +74,35 @@ export function ReadingLayout({
       </header>
 
       <div className="reading-prose font-serif">
-        <MdxBody code={article.body.code} />
+        <MdxBody
+          code={article.body.code}
+          locale={locale}
+          validArticleIds={validArticleIds}
+        />
       </div>
+
+      {relatedResolved.length > 0 ? (
+        <section
+          className="mt-10 border-t border-stone-200 pt-8 dark:border-stone-700"
+          aria-label={ui.relatedArticles}
+        >
+          <h2 className="mb-3 font-sans text-sm font-semibold tracking-wide text-stone-700 uppercase dark:text-stone-300">
+            {ui.relatedArticles}
+          </h2>
+          <ul className="list-inside list-disc space-y-2 text-base text-stone-700 dark:text-stone-300">
+            {relatedResolved.map(({ id, doc }) => (
+              <li key={id}>
+                <Link
+                  href={`/${locale}/${id}`}
+                  className="text-amber-900 underline decoration-amber-700/40 underline-offset-2 hover:decoration-amber-700 dark:text-amber-200 dark:decoration-amber-400/50 dark:hover:decoration-amber-300"
+                >
+                  {doc.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {article.references.length > 0 ? (
         <footer className="mt-12 border-t border-stone-200 pt-8 dark:border-stone-700">

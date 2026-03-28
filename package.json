@@ -19,7 +19,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "doc:cross-refs": "node scripts/generate-article-cross-refs-table.mjs"
   },
   "dependencies": {
     "contentlayer2": "^0.5.8",

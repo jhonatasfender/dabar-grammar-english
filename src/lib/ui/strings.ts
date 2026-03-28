@@ -16,6 +16,7 @@ type Ui = {
   articleLanguage: string;
   notPublished: string;
   references: string;
+  relatedArticles: string;
   summaryLabel: string;
   homeIntro: string;
   searchTitle: string;
@@ -47,6 +48,7 @@ const STRINGS: Record<Locale, Ui> = {
     articleLanguage: "Idioma do artigo:",
     notPublished: "Versão ainda não publicada",
     references: "Referências",
+    relatedArticles: "Leia também",
     summaryLabel: "Em resumo",
     homeIntro:
       "Bem-vindo ao Dabar Grammar English: gramática inglesa avançada em artigos editoriais, organizados por temas e subtemas. Você pode usar a interface em português e, quando quiser, abrir o mesmo tópico em inglês ou espanhol — cada idioma traz o artigo completo, redigido para essa língua.",
@@ -78,6 +80,7 @@ const STRINGS: Record<Locale, Ui> = {
     articleLanguage: "Article language:",
     notPublished: "Version not published yet",
     references: "References",
+    relatedArticles: "See also",
     summaryLabel: "In short",
     homeIntro:
       "Welcome to Dabar Grammar English: advanced English grammar in editorial articles, organized by theme and subtopic. Use the site in English and open the same topic in Portuguese or Spanish when you like — each language offers a full article written for that audience.",
@@ -109,6 +112,7 @@ const STRINGS: Record<Locale, Ui> = {
     articleLanguage: "Idioma del artículo:",
     notPublished: "Versión aún no publicada",
     references: "Referencias",
+    relatedArticles: "Ver también",
     summaryLabel: "En resumen",
     homeIntro:
       "Bienvenido a Dabar Grammar English: gramática inglesa avanzada en artículos editoriales, organizados por tema y subtema. Puede usar la interfaz en español y abrir el mismo tema en inglés o portugués cuando quiera — cada idioma ofrece el artículo completo, redactado para esa lengua.",
