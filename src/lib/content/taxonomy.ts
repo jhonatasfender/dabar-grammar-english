@@ -90,6 +90,61 @@ const SUBTHEME_LABELS: Record<string, Record<Locale, string>> = {
     pt: "Interferência da L1 (PT/ES)",
     es: "Interferencia de la L1 (PT/ES)",
   },
+  "adjective-preposition-collocations": {
+    en: "Adjective + preposition",
+    pt: "Adjetivo + preposição",
+    es: "Adjetivo + preposición",
+  },
+  "participial-adjectives": {
+    en: "Participial adjectives (-ed / -ing)",
+    pt: "Adjetivos participiais (-ed / -ing)",
+    es: "Adjetivos participiales (-ed / -ing)",
+  },
+  "comparison-and-degree": {
+    en: "Comparison and degree",
+    pt: "Comparação e grau",
+    es: "Comparación y grado",
+  },
+  "determiners-and-articles": {
+    en: "Determiners and articles",
+    pt: "Determinantes e artigos",
+    es: "Determinantes y artículos",
+  },
+  "countability": {
+    en: "Countability and quantity",
+    pt: "Contabilidade e quantidade",
+    es: "Contabilidad y cantidad",
+  },
+  "possession-and-genitive": {
+    en: "Possession and the genitive",
+    pt: "Posse e genitivo saxão",
+    es: "Posesión y genitivo sajón",
+  },
+  "place-and-time-prepositions": {
+    en: "Place and time prepositions",
+    pt: "Preposições de lugar e tempo",
+    es: "Preposiciones de lugar y tiempo",
+  },
+  "core-present-system": {
+    en: "Present tense system",
+    pt: "Sistema do presente",
+    es: "Sistema del presente",
+  },
+  "verb-patterns-complementation": {
+    en: "Verb patterns and complementation",
+    pt: "Padrões verbais e complementação",
+    es: "Patrones verbales y complementación",
+  },
+  "existential-constructions": {
+    en: "Existential there",
+    pt: "Construções existenciais com there",
+    es: "Construcciones existenciales con there",
+  },
+  "non-finite-clauses": {
+    en: "Non-finite clauses",
+    pt: "Orações não finitas",
+    es: "Oraciones no finitas",
+  },
 };
 
 export function getThemeIndex(theme: ArticleTheme): number {
