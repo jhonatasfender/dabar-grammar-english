@@ -1,25 +1,47 @@
 {
-  "name": "gramatica-em-ingles",
+  "name": "dabar-grammar-english",
   "version": "0.1.0",
   "private": true,
+  "description": "Dabar Grammar English — portal de gramática avançada em inglês (MDX multilíngue, Next.js + Contentlayer).",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhonatasfender/dabar-grammar-english.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhonatasfender/dabar-grammar-english/issues"
+  },
+  "homepage": "https://github.com/jhonatasfender/dabar-grammar-english#readme",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "contentlayer2 build && next build --webpack",
+    "build:content": "contentlayer2 build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
+    "contentlayer2": "^0.5.8",
+    "lucide-react": "^1.7.0",
+    "minisearch": "^7.2.0",
     "next": "16.2.1",
+    "next-contentlayer2": "^0.5.8",
+    "next-themes": "^0.4.6",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

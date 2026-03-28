@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dabar Grammar English
 
-## Getting Started
+Portal web para estudo **avançado** de inglês (incluindo graduação em Letras), com leitura confortável e conteúdo editorial em **EN / PT / ES** em **MDX** no Git (sem i18n para textos longos).
 
-First, run the development server:
+**Repositório:** [github.com/jhonatasfender/dabar-grammar-english](https://github.com/jhonatasfender/dabar-grammar-english)
+
+## Contribuir
+
+Quer corrigir um texto, propor um artigo ou melhorar uma tradução?
+
+1. Leia o guia **[CONTRIBUTING.md](CONTRIBUTING.md)** (fluxo de PR, pastas de conteúdo, checklist).
+2. Use **[Issues](https://github.com/jhonatasfender/dabar-grammar-english/issues)** para ideias ou dúvidas antes de mudanças grandes.
+3. No site: página **Contribuir** em cada idioma (`/pt/contribute`, `/en/contribute`, `/es/contribute`) com links diretos para o GitHub e o `CONTRIBUTING.md`.
+
+Comportamento na comunidade: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+## Stack
+
+- [Next.js](https://nextjs.org/) (App Router) + TypeScript
+- [Contentlayer2](https://github.com/timlrx/contentlayer2) + [next-contentlayer2](https://www.npmjs.com/package/next-contentlayer2)
+- [MiniSearch](https://lucaong.github.io/minisearch/) para busca no cliente
+- [next-themes](https://github.com/pacocoursey/next-themes) para tema claro/escuro
+
+O Next.js 16 usa Turbopack por padrão; este projeto usa **`--webpack`** no `dev` e no `build` por causa da integração do Contentlayer.
+
+## Comandos
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Conteúdo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Artigos: `src/content/articles/{en,pt,es}/*.mdx`
+- Páginas About / Contribute: `src/content/pages/{en,pt,es}/`
+- Schema de artigos: [`src/lib/content/schema.ts`](src/lib/content/schema.ts)
+- Fluxo editorial (PT): [`docs/PUBLICACAO.md`](docs/PUBLICACAO.md)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Rotas
 
-## Learn More
+- `/` → redireciona para `/pt`
+- `/{locale}` — lista de artigos
+- `/{locale}/{articleId}` — leitura de artigo
+- `/{locale}/about` — sobre o projeto
+- `/{locale}/contribute` — como contribuir
+- `/{locale}/search` — busca
 
-To learn more about Next.js, take a look at the following resources:
+## SEO, sitemap e crawlers (Search + IA)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **`NEXT_PUBLIC_SITE_URL`**: URL pública canônica (sem barra final); alimenta `metadataBase`, `sitemap.xml`, `robots.txt` e JSON-LD. Ver [`.env.example`](./.env.example).
+- **Documentação**: [docs/SEO_INDEXACAO.md](./docs/SEO_INDEXACAO.md) (matriz de bots, variáveis `ROBOTS_ALLOW_AI_TRAINING`, checklist pós-deploy).
+- **`/llms.txt`**: índice opcional para descoberta por LLMs ([`public/llms.txt`](./public/llms.txt)); substitua `https://YOUR_DOMAIN` pelo domínio real.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Licença
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Conteúdo e código: conforme decisão do mantenedor do repositório.

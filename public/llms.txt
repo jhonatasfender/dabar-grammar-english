@@ -1,0 +1,34 @@
+# Dabar Grammar English
+
+> Advanced English grammar in editorial articles — full articles in **English**, **Portuguese**, and **Spanish** (MDX). Replace `https://YOUR_DOMAIN` with your deployed `NEXT_PUBLIC_SITE_URL`.
+
+## Start here
+
+- [Portuguese home](https://YOUR_DOMAIN/pt): article index (default locale)
+- [English home](https://YOUR_DOMAIN/en): article index
+- [Spanish home](https://YOUR_DOMAIN/es): article index
+
+## Search
+
+- [Search (pt)](https://YOUR_DOMAIN/pt/search)
+- [Search (en)](https://YOUR_DOMAIN/en/search)
+- [Search (es)](https://YOUR_DOMAIN/es/search)
+
+## High-intent topic hubs (trilingual)
+
+- [Verb tenses in use (en)](https://YOUR_DOMAIN/en/verb-tenses-in-use) — [pt](https://YOUR_DOMAIN/pt/verb-tenses-in-use) — [es](https://YOUR_DOMAIN/es/verb-tenses-in-use)
+- [Conditionals & modality (en)](https://YOUR_DOMAIN/en/english-conditionals-modality) — [pt](https://YOUR_DOMAIN/pt/english-conditionals-modality) — [es](https://YOUR_DOMAIN/es/english-conditionals-modality)
+- [Prepositions & articles (en)](https://YOUR_DOMAIN/en/prepositions-and-articles) — [pt](https://YOUR_DOMAIN/pt/prepositions-and-articles) — [es](https://YOUR_DOMAIN/es/prepositions-and-articles)
+- [Punctuation & clauses (en)](https://YOUR_DOMAIN/en/sentence-punctuation-and-clauses) — [pt](https://YOUR_DOMAIN/pt/sentence-punctuation-and-clauses) — [es](https://YOUR_DOMAIN/es/sentence-punctuation-and-clauses)
+- [Academic writing grammar (en)](https://YOUR_DOMAIN/en/academic-writing-grammar) — [pt](https://YOUR_DOMAIN/pt/academic-writing-grammar) — [es](https://YOUR_DOMAIN/es/academic-writing-grammar)
+- [L1 interference PT/ES (en)](https://YOUR_DOMAIN/en/l1-interference-pt-es) — [pt](https://YOUR_DOMAIN/pt/l1-interference-pt-es) — [es](https://YOUR_DOMAIN/es/l1-interference-pt-es)
+
+## Project pages
+
+- [About (pt)](https://YOUR_DOMAIN/pt/about) — [en](https://YOUR_DOMAIN/en/about) — [es](https://YOUR_DOMAIN/es/about)
+- [Contribute (pt)](https://YOUR_DOMAIN/pt/contribute) — [en](https://YOUR_DOMAIN/en/contribute) — [es](https://YOUR_DOMAIN/es/contribute)
+
+## Maintainer docs
+
+- [Publication workflow (pt)](https://github.com/jhonatasfender/dabar-grammar-english/blob/main/docs/PUBLICACAO.md)
+- [SEO & indexing notes](https://github.com/jhonatasfender/dabar-grammar-english/blob/main/docs/SEO_INDEXACAO.md)
