@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { Providers } from "@/components/providers";
 import { WebsiteJsonLd } from "@/components/seo/json-ld";
@@ -22,6 +22,13 @@ const sourceSerif = Source_Serif_4({
 });
 
 const GOOGLE_SITE_VERIFICATION = "unahNzmBf8H9v8ij7TE7I63r6AHngHn_vNNWNgeNiiU";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -63,7 +70,7 @@ export default function RootLayout({
           geistSans.variable,
           geistMono.variable,
           sourceSerif.variable,
-          "min-h-full bg-background font-sans text-foreground antialiased",
+          "bg-background text-foreground min-h-full font-sans antialiased",
         )}
       >
         <Providers>

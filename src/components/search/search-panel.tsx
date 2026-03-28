@@ -6,6 +6,19 @@ import { useMemo, useState } from "react";
 import { InlineMarkdown } from "@/components/reading/inline-markdown";
 import type { SearchDoc } from "@/lib/search/search-docs";
 
+const searchInputClass = [
+  "w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-stone-900 shadow-sm",
+  "ring-amber-700/30 outline-none placeholder:text-stone-400",
+  "focus:border-amber-700 focus:ring-2",
+  "dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100",
+  "dark:placeholder:text-stone-500 dark:focus:border-amber-500",
+].join(" ");
+
+const searchResultLinkClass = [
+  "block rounded-lg border border-stone-200 bg-[var(--surface)] p-4 transition",
+  "hover:border-amber-600/60 dark:border-stone-700 dark:hover:border-amber-500/50",
+].join(" ");
+
 export function SearchPanel({
   locale,
   documents,
@@ -57,7 +70,7 @@ export function SearchPanel({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
-          className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-stone-900 shadow-sm ring-amber-700/30 outline-none placeholder:text-stone-400 focus:border-amber-700 focus:ring-2 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 dark:focus:border-amber-500"
+          className={searchInputClass}
           autoComplete="off"
         />
       </label>
@@ -74,10 +87,7 @@ export function SearchPanel({
         <ul className="space-y-3">
           {results.map((r) => (
             <li key={r.id}>
-              <Link
-                href={r.url}
-                className="block rounded-lg border border-stone-200 bg-[var(--surface)] p-4 transition hover:border-amber-600/60 dark:border-stone-700 dark:hover:border-amber-500/50"
-              >
+              <Link href={r.url} className={searchResultLinkClass}>
                 <span className="font-medium text-stone-900 dark:text-stone-50">
                   <InlineMarkdown text={r.title} variant="inline" />
                 </span>

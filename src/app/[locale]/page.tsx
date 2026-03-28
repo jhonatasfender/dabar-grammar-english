@@ -14,6 +14,23 @@ import { getUi } from "@/lib/ui/strings";
 import type { ArticleTheme } from "@/lib/content/taxonomy";
 import { LocaleSwitchLinks } from "@/components/locale-switch-links";
 
+const homeThemeChipClass = [
+  "inline-block rounded-full border border-stone-200 bg-(--surface) px-3 py-1.5 text-sm",
+  "text-stone-700 transition",
+  "hover:border-amber-600/40 hover:text-amber-950",
+  "dark:border-stone-600 dark:text-stone-300 dark:hover:border-amber-500/35 dark:hover:text-amber-100",
+].join(" ");
+
+const homeThemeHeadingClass = [
+  "border-b border-stone-200 pb-2 font-sans text-sm font-semibold tracking-wide",
+  "text-stone-700 uppercase dark:border-stone-600 dark:text-stone-300",
+].join(" ");
+
+const homeArticleCardLinkClass = [
+  "group/link block rounded-lg border border-transparent bg-stone-50/80 p-4 transition",
+  "hover:border-amber-600/45 dark:bg-stone-900/40 dark:hover:border-amber-500/35",
+].join(" ");
+
 function themeSectionId(theme: ArticleTheme): string {
   return `theme-${theme}`;
 }
@@ -77,7 +94,7 @@ export default async function LocaleHomePage({
                 <li key={theme}>
                   <a
                     href={`#${themeSectionId(theme)}`}
-                    className="inline-block rounded-full border border-stone-200 bg-(--surface) px-3 py-1.5 text-sm text-stone-700 transition hover:border-amber-600/40 hover:text-amber-950 dark:border-stone-600 dark:text-stone-300 dark:hover:border-amber-500/35 dark:hover:text-amber-100"
+                    className={homeThemeChipClass}
                   >
                     {getThemeLabel(theme, locale)}
                   </a>
@@ -93,7 +110,7 @@ export default async function LocaleHomePage({
                 id={themeSectionId(theme)}
                 className="scroll-mt-28 space-y-4"
               >
-                <h2 className="border-b border-stone-200 pb-2 font-sans text-sm font-semibold tracking-wide text-stone-700 uppercase dark:border-stone-600 dark:text-stone-300">
+                <h2 className={homeThemeHeadingClass}>
                   {getThemeLabel(theme, locale)}
                 </h2>
                 <div className="space-y-3">
@@ -108,7 +125,7 @@ export default async function LocaleHomePage({
                           <li key={a._id}>
                             <Link
                               href={a.url}
-                              className="group/link block rounded-lg border border-transparent bg-stone-50/80 p-4 transition hover:border-amber-600/45 dark:bg-stone-900/40 dark:hover:border-amber-500/35"
+                              className={homeArticleCardLinkClass}
                             >
                               <span className="font-medium text-stone-900 group-hover/link:text-amber-950 dark:text-stone-50 dark:group-hover/link:text-amber-100">
                                 <InlineMarkdown

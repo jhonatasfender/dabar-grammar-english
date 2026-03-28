@@ -13,6 +13,18 @@ import {
 import { formatThemeLine } from "@/lib/content/taxonomy";
 import { getUi } from "@/lib/ui/strings";
 
+const summaryAsideClass = [
+  "rounded-xl border border-amber-200/80 bg-amber-50/90 px-4 py-3",
+  "text-base leading-relaxed text-stone-800",
+  "dark:border-amber-500/30 dark:bg-amber-950/25 dark:text-amber-50",
+].join(" ");
+
+const relatedArticleLinkClass = [
+  "text-amber-900 underline decoration-amber-700/40 underline-offset-2",
+  "hover:decoration-amber-700",
+  "dark:text-amber-200 dark:decoration-amber-400/50 dark:hover:decoration-amber-300",
+].join(" ");
+
 export function ReadingLayout({
   article,
   locale,
@@ -47,10 +59,7 @@ export function ReadingLayout({
           </div>
         ) : null}
         {article.summary ? (
-          <aside
-            className="rounded-xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-base leading-relaxed text-stone-800 dark:border-amber-500/30 dark:bg-amber-950/25 dark:text-amber-50"
-            aria-label={ui.summaryLabel}
-          >
+          <aside className={summaryAsideClass} aria-label={ui.summaryLabel}>
             <p className="font-sans text-xs font-semibold tracking-wide text-amber-900 uppercase dark:text-amber-200/90">
               {ui.summaryLabel}
             </p>
@@ -94,7 +103,7 @@ export function ReadingLayout({
               <li key={id}>
                 <Link
                   href={`/${locale}/${id}`}
-                  className="text-amber-900 underline decoration-amber-700/40 underline-offset-2 hover:decoration-amber-700 dark:text-amber-200 dark:decoration-amber-400/50 dark:hover:decoration-amber-300"
+                  className={relatedArticleLinkClass}
                 >
                   {doc.title}
                 </Link>

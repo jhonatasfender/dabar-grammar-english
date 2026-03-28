@@ -8,6 +8,12 @@ import {
   type SyntheticEvent,
 } from "react";
 
+const summaryRowClass = [
+  "flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5",
+  "font-sans text-xs font-medium tracking-wide text-stone-600 uppercase",
+  "marker:hidden dark:text-stone-400 [&::-webkit-details-marker]:hidden",
+].join(" ");
+
 type HomeSubthemeDetailsProps = {
   defaultOpen: boolean;
   summary: ReactNode;
@@ -31,7 +37,7 @@ export function HomeSubthemeDetails({
       open={open}
       onToggle={onToggle}
     >
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 font-sans text-xs font-medium tracking-wide text-stone-600 uppercase marker:hidden dark:text-stone-400 [&::-webkit-details-marker]:hidden">
+      <summary className={summaryRowClass}>
         <span className="min-w-0 text-pretty">{summary}</span>
         <ChevronDown
           className="size-4 shrink-0 text-stone-400 transition-transform duration-200 group-open:rotate-180 dark:text-stone-500"

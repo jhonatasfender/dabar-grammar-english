@@ -1,13 +1,28 @@
+import { spawnSync } from "node:child_process";
+import { randomUUID } from "node:crypto";
 import { createRequire } from "module";
 import path from "path";
 import { fileURLToPath } from "url";
 import type { NextConfig } from "next";
+import withSerwistInit from "@serwist/next";
 import { withContentlayer } from "next-contentlayer2";
 
 const __filename = fileURLToPath(import.meta.url);
 const require = createRequire(__filename);
 
 const isDev = process.env.NODE_ENV === "development";
+
+const swRevision =
+  spawnSync("git", ["rev-parse", "HEAD"], {
+    encoding: "utf-8",
+  }).stdout?.trim() || randomUUID();
+
+const withSerwist = withSerwistInit({
+  swSrc: "src/app/sw.ts",
+  swDest: "public/sw.js",
+  disable: isDev,
+  additionalPrecacheEntries: [{ url: "/~offline", revision: swRevision }],
+});
 
 function contentSecurityPolicy(): string {
   const directives = [
@@ -67,4 +82,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withContentlayer(nextConfig);
+export default withSerwist(withContentlayer(nextConfig));

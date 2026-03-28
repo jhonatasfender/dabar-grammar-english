@@ -41,3 +41,9 @@ yarn-error.log*
 next-env.d.ts
 
 .contentlayer
+
+# Serwist (generated at build)
+public/sw.js
+public/sw.js.map
+public/swe-worker-*.js
+public/swe-worker-*.js.map

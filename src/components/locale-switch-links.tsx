@@ -44,8 +44,10 @@ export function LocaleSwitchLinks({
     <nav
       aria-label={ariaLabel}
       className={cn(
-        "reading-locale-switch flex-wrap items-center",
-        compact ? "inline-flex gap-1 text-xs" : "flex gap-2 text-sm",
+        "reading-locale-switch items-center",
+        compact
+          ? "inline-flex shrink-0 flex-nowrap gap-1 text-xs"
+          : "flex flex-wrap gap-2 text-sm",
       )}
     >
       {leadingLabel ? (
@@ -55,8 +57,9 @@ export function LocaleSwitchLinks({
       ) : null}
       <div
         className={cn(
-          "flex-wrap",
-          compact ? "inline-flex gap-1" : "flex gap-2",
+          compact
+            ? "inline-flex shrink-0 flex-nowrap gap-1"
+            : "flex flex-wrap gap-2",
         )}
       >
         {ORDER.map((loc) => {
@@ -67,7 +70,10 @@ export function LocaleSwitchLinks({
               <span
                 key={loc}
                 className={cn(
-                  "border border-amber-700 bg-amber-50 text-amber-950 dark:border-amber-500 dark:bg-amber-950/40 dark:text-amber-100",
+                  [
+                    "border border-amber-700 bg-amber-50 text-amber-950",
+                    "dark:border-amber-500 dark:bg-amber-950/40 dark:text-amber-100",
+                  ].join(" "),
                   compact
                     ? "rounded px-1.5 py-0.5 font-semibold tabular-nums"
                     : "rounded-md px-2 py-1 font-medium",
@@ -83,7 +89,12 @@ export function LocaleSwitchLinks({
               href={href}
               title={LOCALE_LABELS[loc]}
               className={cn(
-                "border border-stone-300 bg-white text-stone-800 transition-colors hover:border-stone-500 hover:bg-stone-50 hover:text-stone-950 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:hover:border-stone-500 dark:hover:bg-stone-800 dark:hover:text-stone-50",
+                [
+                  "border border-stone-300 bg-white text-stone-800 transition-colors",
+                  "hover:border-stone-500 hover:bg-stone-50 hover:text-stone-950",
+                  "dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100",
+                  "dark:hover:border-stone-500 dark:hover:bg-stone-800 dark:hover:text-stone-50",
+                ].join(" "),
                 compact
                   ? "rounded px-1.5 py-0.5 font-medium tabular-nums"
                   : "rounded-md px-2 py-1",

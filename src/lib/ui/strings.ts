@@ -1,8 +1,10 @@
 import type { Locale } from "@/lib/content/constants";
 
-type Ui = {
+export type Ui = {
   siteTitle: string;
   navPrimaryAria: string;
+  navMenuOpenAria: string;
+  navMenuCloseAria: string;
   navArticles: string;
   navSearch: string;
   navAbout: string;
@@ -37,6 +39,8 @@ const STRINGS: Record<Locale, Ui> = {
   pt: {
     siteTitle: "Dabar Grammar English",
     navPrimaryAria: "Navegação principal",
+    navMenuOpenAria: "Abrir menu de navegação",
+    navMenuCloseAria: "Fechar menu de navegação",
     navArticles: "Artigos",
     navSearch: "Buscar",
     navAbout: "Sobre",
@@ -71,6 +75,8 @@ const STRINGS: Record<Locale, Ui> = {
   en: {
     siteTitle: "Dabar Grammar English",
     navPrimaryAria: "Main navigation",
+    navMenuOpenAria: "Open navigation menu",
+    navMenuCloseAria: "Close navigation menu",
     navArticles: "Articles",
     navSearch: "Search",
     navAbout: "About",
@@ -105,6 +111,8 @@ const STRINGS: Record<Locale, Ui> = {
   es: {
     siteTitle: "Dabar Grammar English",
     navPrimaryAria: "Navegación principal",
+    navMenuOpenAria: "Abrir menú de navegación",
+    navMenuCloseAria: "Cerrar menú de navegación",
     navArticles: "Artículos",
     navSearch: "Buscar",
     navAbout: "Acerca de",
@@ -138,6 +146,42 @@ const STRINGS: Record<Locale, Ui> = {
   },
 };
 
+export type SiteHeaderUi = Pick<
+  Ui,
+  | "navPrimaryAria"
+  | "navMenuOpenAria"
+  | "navMenuCloseAria"
+  | "navArticles"
+  | "navSearch"
+  | "navAbout"
+  | "navContribute"
+  | "navGithubTitle"
+  | "navLocaleHint"
+  | "themeLight"
+  | "themeDark"
+  | "themeAriaLight"
+  | "themeAriaDark"
+>;
+
 export function getUi(locale: Locale): Ui {
   return STRINGS[locale];
+}
+
+export function getSiteHeaderUi(locale: Locale): SiteHeaderUi {
+  const u = STRINGS[locale];
+  return {
+    navPrimaryAria: u.navPrimaryAria,
+    navMenuOpenAria: u.navMenuOpenAria,
+    navMenuCloseAria: u.navMenuCloseAria,
+    navArticles: u.navArticles,
+    navSearch: u.navSearch,
+    navAbout: u.navAbout,
+    navContribute: u.navContribute,
+    navGithubTitle: u.navGithubTitle,
+    navLocaleHint: u.navLocaleHint,
+    themeLight: u.themeLight,
+    themeDark: u.themeDark,
+    themeAriaLight: u.themeAriaLight,
+    themeAriaDark: u.themeAriaDark,
+  };
 }
