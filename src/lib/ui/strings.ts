@@ -33,6 +33,8 @@ export type Ui = {
   themeAriaLight: string;
   themeAriaDark: string;
   textSize: string;
+  articleAudioLabel: string;
+  articleAudioUnavailable: string;
 };
 
 const STRINGS: Record<Locale, Ui> = {
@@ -71,6 +73,9 @@ const STRINGS: Record<Locale, Ui> = {
     themeAriaLight: "Ativar tema claro",
     themeAriaDark: "Ativar tema escuro",
     textSize: "Texto:",
+    articleAudioLabel: "Ouvir leitura em áudio",
+    articleAudioUnavailable:
+      "Áudio ainda não disponível neste idioma ou não carregou.",
   },
   en: {
     siteTitle: "Dabar Grammar English",
@@ -107,6 +112,8 @@ const STRINGS: Record<Locale, Ui> = {
     themeAriaLight: "Switch to light theme",
     themeAriaDark: "Switch to dark theme",
     textSize: "Text:",
+    articleAudioLabel: "Listen to audio",
+    articleAudioUnavailable: "Audio not available for this page or failed to load.",
   },
   es: {
     siteTitle: "Dabar Grammar English",
@@ -143,6 +150,9 @@ const STRINGS: Record<Locale, Ui> = {
     themeAriaLight: "Activar tema claro",
     themeAriaDark: "Activar tema oscuro",
     textSize: "Texto:",
+    articleAudioLabel: "Escuchar lectura en audio",
+    articleAudioUnavailable:
+      "Audio aún no disponible en este idioma o no se pudo cargar.",
   },
 };
 

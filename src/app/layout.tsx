@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { connection } from "next/server";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { Providers } from "@/components/providers";
 import { WebsiteJsonLd } from "@/components/seo/json-ld";
@@ -58,11 +59,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await connection();
+
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body

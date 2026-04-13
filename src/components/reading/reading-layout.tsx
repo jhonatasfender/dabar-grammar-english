@@ -87,6 +87,7 @@ export function ReadingLayout({
           code={article.body.code}
           locale={locale}
           validArticleIds={validArticleIds}
+          audioStem={article.articleId}
         />
       </div>
 

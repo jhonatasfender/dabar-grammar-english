@@ -1,4 +1,5 @@
 import type { Article } from "contentlayer/generated";
+import { headers } from "next/headers";
 import type { Locale } from "@/lib/content/constants";
 import { DEFAULT_LOCALE } from "@/lib/content/constants";
 import { stripInlineMarkdown } from "@/lib/markdown/strip-inline-markdown";
@@ -6,16 +7,19 @@ import { absoluteUrl, getSiteUrl } from "@/lib/site/url";
 
 const SITE_NAME = "Dabar Grammar English";
 
-function JsonLdScript({ data }: { data: Record<string, unknown> }) {
+async function JsonLdScript({ data }: { data: Record<string, unknown> }) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <script
       type="application/ld+json"
+      suppressHydrationWarning
+      {...(nonce ? { nonce } : {})}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
 }
 
-export function WebsiteJsonLd() {
+export async function WebsiteJsonLd() {
   const base = getSiteUrl();
   const data = {
     "@context": "https://schema.org",
@@ -32,7 +36,7 @@ export function WebsiteJsonLd() {
   return <JsonLdScript data={data} />;
 }
 
-export function ArticleJsonLd({
+export async function ArticleJsonLd({
   article,
   locale,
 }: {
@@ -102,7 +106,7 @@ export function ArticleJsonLd({
   );
 }
 
-export function WebPageJsonLd({
+export async function WebPageJsonLd({
   title,
   description,
   locale,

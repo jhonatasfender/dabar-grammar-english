@@ -1,0 +1,6 @@
+# Por defeito o Cursor ignora `.env*` (lista global + .gitignore).
+# Estas linhas reabrem só estes ficheiros para o Agent, @-mentions e pesquisa.
+# O `.gitignore` do projeto mantém-se: não commits acidentais de segredos.
+!.env
+!.env.local
+

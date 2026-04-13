@@ -50,7 +50,7 @@ export function SitePageLayout({
       </header>
 
       <div className="reading-prose font-serif">
-        <MdxBody code={page.body.code} locale={locale} />
+        <MdxBody code={page.body.code} locale={locale} audioStem={page.slug} />
       </div>
     </article>
   );

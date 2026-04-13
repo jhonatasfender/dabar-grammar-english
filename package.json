@@ -20,7 +20,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "doc:cross-refs": "node scripts/generate-article-cross-refs-table.mjs"
+    "doc:cross-refs": "node scripts/generate-article-cross-refs-table.mjs",
+    "generate-audio": "node scripts/generate-article-audio.mjs"
   },
   "dependencies": {
     "@serwist/next": "^9.5.7",
@@ -39,18 +40,22 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.40.0",
     "@tailwindcss/postcss": "^4",
     "@types/mdx": "^2.0.13",
-    "@types/node": "^20",
+    "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
+    "eslint": "^9.39.0",
     "eslint-config-next": "16.2.1",
     "eslint-config-prettier": "^10.1.8",
+    "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "remark-parse": "^11.0.0",
     "serwist": "^9.5.7",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5.9.0",
+    "unified": "^11.0.5"
   }
 }
