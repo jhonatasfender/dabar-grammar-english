@@ -140,6 +140,11 @@ const SUBTHEME_LABELS: Record<string, Record<Locale, string>> = {
     pt: "Sistema do presente",
     es: "Sistema del presente",
   },
+  "auxiliaries-and-modals-overview": {
+    en: "Auxiliaries and modals — overview",
+    pt: "Auxiliares e modais — visão geral",
+    es: "Auxiliares y modales — panorama",
+  },
   "verb-patterns-complementation": {
     en: "Verb patterns and complementation",
     pt: "Padrões verbais e complementação",
