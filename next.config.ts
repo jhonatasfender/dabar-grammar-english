@@ -25,9 +25,6 @@ const withSerwist = withSerwistInit({
 });
 
 const nextConfig: NextConfig = {
-  experimental: {
-    inlineCss: true,
-  },
   async headers() {
     return [
       {
