@@ -23,7 +23,7 @@ function buildContentSecurityPolicy(nonce: string): string {
   return directives.join("; ");
 }
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const nonce = randomNonce();
   const contentSecurityPolicyHeaderValue = buildContentSecurityPolicy(nonce);
 
