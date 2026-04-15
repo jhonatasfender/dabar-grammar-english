@@ -8,6 +8,9 @@
   --surface: #fffcf8;
   --surface-muted: #f5f0e8;
   --reading-font-pct: 100%;
+  --scrollbar-thumb: rgb(120 113 108 / 0.22);
+  --scrollbar-thumb-hover: rgb(120 113 108 / 0.4);
+  --scrollbar-track: transparent;
 }
 
 .dark {
@@ -15,6 +18,9 @@
   --foreground: #f5f0eb;
   --surface: #1c1917;
   --surface-muted: #171412;
+  --scrollbar-thumb: rgb(168 162 158 / 0.2);
+  --scrollbar-thumb-hover: rgb(168 162 158 / 0.38);
+  --scrollbar-track: transparent;
 }
 
 @theme inline {
@@ -27,6 +33,35 @@
 
 body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  background-color: var(--scrollbar-thumb);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+html::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .reading-root {
