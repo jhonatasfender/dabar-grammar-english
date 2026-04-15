@@ -1,12 +1,17 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-const isDev = process.env.NODE_ENV === "development";
+function randomNonce(): string {
+  // Edge middleware: avoid Node `Buffer` (same as Buffer.from(uuid).toString("base64") for ASCII).
+  return btoa(crypto.randomUUID());
+}
 
 function buildContentSecurityPolicy(nonce: string): string {
   const directives = [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""}`,
-    `style-src 'self' 'nonce-${nonce}'`,
+    // next-contentlayer2 useMDXComponent compiles MDX on the client via new Function().
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval'`,
+    // React style={{}} and common libs set inline style attributes (no nonce on attrs).
+    `style-src 'self' 'nonce-${nonce}' 'unsafe-inline'`,
     "img-src 'self' data: blob:",
     "font-src 'self'",
     "connect-src 'self'",
@@ -22,7 +27,7 @@ function buildContentSecurityPolicy(nonce: string): string {
 }
 
 export function proxy(request: NextRequest) {
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+  const nonce = randomNonce();
   const contentSecurityPolicyHeaderValue = buildContentSecurityPolicy(nonce);
 
   const requestHeaders = new Headers(request.headers);
