@@ -113,7 +113,8 @@ const STRINGS: Record<Locale, Ui> = {
     themeAriaDark: "Switch to dark theme",
     textSize: "Text:",
     articleAudioLabel: "Listen to audio",
-    articleAudioUnavailable: "Audio not available for this page or failed to load.",
+    articleAudioUnavailable:
+      "Audio not available for this page or failed to load.",
   },
   es: {
     siteTitle: "Dabar Grammar English",
